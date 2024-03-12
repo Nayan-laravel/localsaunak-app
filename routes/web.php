@@ -34,9 +34,11 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
 //Admin Route
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+    
+    
+    
     Route::namespace('Auth')->middleware('guest:admin')->group(function(){
         //login route
         Route::get('login',[AuthenticatedSessionController::class, 'create'])->name('login'); 
@@ -47,7 +49,10 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         
         Route::get('dashboard',[HomeController::class, 'index'])->name('dashboard'); 
         Route::get('userdetails',[HomeController::class, 'userdetailsview'])->name('userdetails'); 
-        
+        Route::get('getusers', [HomeController::class, 'getUsers'])->name('getusers');
+        Route::get('usersadd', [HomeController::class, 'newUsers'])->name('usersadd');
+
+
     }); 
     Route::POST('logout',[AuthenticatedSessionController::class, 'destroy'])->name('logout');  
 
