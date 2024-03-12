@@ -45,7 +45,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     }); 
     Route::middleware('admin')->group(function(){
         
-        Route::get('dashboard',[HomeController::class, 'index'])->name('dashboard');  
+        Route::get('dashboard',[HomeController::class, 'index'])->name('dashboard'); 
+        Route::get('userdetails',[HomeController::class, 'userdetailsview'])->name('userdetails'); 
         
     }); 
     Route::POST('logout',[AuthenticatedSessionController::class, 'destroy'])->name('logout');  

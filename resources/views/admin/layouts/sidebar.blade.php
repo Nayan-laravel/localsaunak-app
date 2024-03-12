@@ -57,6 +57,15 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{route('admin.userdetails')}}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>User-Master</p>
+                    </a>
+                </li>
+
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
